@@ -1,4 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+repositories {
+    mavenCentral()
+}
 
 android {
     compileSdkVersion 25
@@ -10,6 +15,7 @@ android {
         versionCode 1
         versionName "0.1.0"
 
+        consumerProguardFiles 'proguard.txt'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
