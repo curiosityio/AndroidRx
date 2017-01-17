@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidRx</string>
+    <string name="enter_email_address">Enter email address</string>
 </resources>
