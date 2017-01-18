@@ -13,7 +13,7 @@ fun EditText.verifyNotEmpty(errorMessage: String): Completable {
         } else {
             subscriber.onCompleted()
         }
-    }.subscribeOn(AndroidSchedulers.mainThread()).observeOn(AndroidSchedulers.mainThread())
+    }.observeOn(AndroidSchedulers.mainThread())
 }
 
 fun EditText.verifyEmail(): Completable {
@@ -24,5 +24,5 @@ fun EditText.verifyEmail(): Completable {
             error = context.getString(R.string.enter_email_address)
             subscriber.onError(RuntimeException(error!!.toString()))
         }
-    }.subscribeOn(AndroidSchedulers.mainThread()).observeOn(AndroidSchedulers.mainThread())
+    }.observeOn(AndroidSchedulers.mainThread())
 }
