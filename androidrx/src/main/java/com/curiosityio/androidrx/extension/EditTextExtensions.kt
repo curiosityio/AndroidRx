@@ -14,7 +14,7 @@ fun EditText.verifyNotEmpty(errorMessage: String, throwErrorOnError: Boolean = f
         } else {
             subscriber.onCompleted()
         }
-    }.observeOn(AndroidSchedulers.mainThread())
+    }.operateOnUIThread()
 }
 
 fun EditText.verifyEmail(throwErrorOnError: Boolean = false): Completable {
@@ -26,5 +26,5 @@ fun EditText.verifyEmail(throwErrorOnError: Boolean = false): Completable {
 
             if (throwErrorOnError) subscriber.onError(RuntimeException(error!!.toString()))
         }
-    }.observeOn(AndroidSchedulers.mainThread())
+    }.operateOnUIThread()
 }
